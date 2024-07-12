@@ -15,60 +15,34 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "AA",
-                    "type": "Value",
+                    "name": "PutBomb",
+                    "type": "Button",
                     "id": "54ba2f9b-475c-4d9c-a76c-2a78f824d50e",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Flag",
+                    "type": "Button",
+                    "id": "0abd72a3-40d9-48e7-91e9-0e3e1df769b2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeBomb",
+                    "type": "Button",
+                    "id": "dc3f62f5-200b-41f8-baef-e8d4af49dafe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "8e144777-b79b-4dcd-afb5-98f4134fad01",
-                    "path": "<XInputController>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "77e2ce4f-2f40-4b78-b607-f758800969cf",
-                    "path": "<XInputController>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c1682222-0168-4c90-8306-e59e5f353bf8",
-                    "path": "<XInputController>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8abfe6d6-b637-4a75-b0d0-3fa42acd7599",
-                    "path": "<XInputController>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "09aa16d8-295d-427c-9103-e9a649bc9964",
@@ -83,11 +57,33 @@
                 {
                     "name": "",
                     "id": "cf3c2187-a710-4467-abdd-3bef398d0221",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AA",
+                    "action": "PutBomb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2baaae59-88aa-473a-b799-4f85fcd3cfcf",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b6ac454-40d6-493a-97ee-e2f9af815693",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeBomb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,8 +1,9 @@
 using UnityEngine;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CharacterController), typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
     #region 変数
@@ -11,16 +12,17 @@ public class PlayerController : MonoBehaviour
 
     private Transform _transform = default;
     private CharacterController _characterController = default;
+    private PlayerInput _playerInput = default;
 
     //private Vector2 _inputMove = default;
     private float _verticalVelocity = default;
     private float _turnVelocity = default;
+
+    private Vector2ReactiveProperty _inputMove = new Vector2ReactiveProperty(default);
     #endregion
 
     #region プロパティ
-    private ReactiveProperty<Vector2> _inputMove = new ReactiveProperty<Vector2>(default);
-
-    public ReactiveProperty<Vector2> InputMove { get => _inputMove; private set => _inputMove = value; }
+    public Vector2ReactiveProperty InputMove { get => _inputMove; private set => _inputMove = value; }
     #endregion
 
     #region メソッド
@@ -71,6 +73,30 @@ public class PlayerController : MonoBehaviour
     {
         _transform = this.transform;
         _characterController = GetComponent<CharacterController>();
+        _playerInput = GetComponent<PlayerInput>();
+    }
+
+    private void Start()
+    {
+        //操作キャラ移動用オペレーター
+        this.UpdateAsObservable()
+            .Where(_ => _playerInput.actions["Move"].IsPressed())
+            .Subscribe(_ => Debug.Log("MpveMpveMove"));
+
+        //爆弾設置用オペレーター
+        this.UpdateAsObservable()
+            .Where(_ => _playerInput.actions["PutBomb"].IsPressed())
+            .Subscribe(_ => Debug.Log("PutBomb"));
+
+        //旗設置・回収用オペレーター
+        this.UpdateAsObservable()
+            .Where(_ => _playerInput.actions["Flag"].IsPressed())
+            .Subscribe(_ => Debug.Log("Flag"));
+
+        //爆弾軌道変更用オペレーター
+        this.UpdateAsObservable()
+            .Where(_ => _playerInput.actions["ChangeBomb"].IsPressed())
+            .Subscribe(_ => Debug.Log("PutBomb"));
     }
 
     /// <summary>

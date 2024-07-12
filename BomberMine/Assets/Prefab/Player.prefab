@@ -134,7 +134,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -1854088811099085626}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 51ec7385-c047-4867-93c0-cbe81c8e7b5b
     m_ActionName: 'Player/Move[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/down]'
   - m_PersistentCalls:
@@ -178,21 +190,17 @@ MonoBehaviour:
     m_ActionId: b93c6af5-47c1-4a32-bc51-58f5d490777d
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -1854088811099085626}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 54ba2f9b-475c-4d9c-a76c-2a78f824d50e
     m_ActionName: 'Player/AA[/XInputControllerWindows/leftStick]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0abd72a3-40d9-48e7-91e9-0e3e1df769b2
+    m_ActionName: 'Player/Flag[/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dc3f62f5-200b-41f8-baef-e8d4af49dafe
+    m_ActionName: 'Player/ChangeBomb[/XInputControllerWindows/rightShoulder]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

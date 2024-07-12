@@ -34,9 +34,6 @@ public class CharactorMove : MonoBehaviour
      /// </summary>  
      private void Start ()
      {
-        //移動の数値が変化すると反応するようにする
-        this.UpdateAsObservable()
-            .Where(_ => );
      }
   
      /// <summary>  
