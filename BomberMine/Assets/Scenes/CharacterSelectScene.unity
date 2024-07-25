@@ -391,6 +391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterImage
       objectReference: {fileID: 0}
+    - target: {fileID: 4005207010538491448, guid: 11c2c784dc48ff046a6785c2c1c3f0ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6891976763950046192, guid: 11c2c784dc48ff046a6785c2c1c3f0ce, type: 3}
       propertyPath: m_Sprite
       value: 
