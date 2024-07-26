@@ -48,7 +48,7 @@ public class TitleManeger : MonoBehaviour
     {
         if (Input.anyKeyDown && _titleState == TitleState.first)
         {
-            _animator.SetBool("StratAnime", true);
+            _animator.SetTrigger("StratAnimeTrigger");
             _deleteText.SetActive(false);
             _createText.SetActive(true);
             _titleState = TitleState.second;
@@ -82,12 +82,15 @@ public class TitleManeger : MonoBehaviour
     /// </summary>
     public void OnSelct(InputAction.CallbackContext context)
     {
-        if(_titleState == TitleState.first)
+        // ボタンが押された瞬間に処理
+        if (!context.performed || _titleState == TitleState.first)
         {
             return;
         }
+
         if (_isSelectMenu == false)
         {
+            _animator.SetTrigger("ChangeSceneAnimeTrigger");
 
         }
         else
@@ -95,7 +98,7 @@ public class TitleManeger : MonoBehaviour
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
 #else
-            Application.Quit();//ゲームプレイ終了
+                    Application.Quit();//ゲームプレイ終了
 #endif
         }
     }
